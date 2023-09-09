@@ -1,13 +1,13 @@
-<div highlighted class="top-menu">
+<div class="top-menu">
 
     <img class="logo"
          src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 
 </div>
 
+<ng-template [ngIf]="courses[0]" let-course>
 
-
-<div class="courses" *ngIf="courses[0] as course">
+  <div class="courses">
 
     <course-card highlighted #highlighter="hl"
             (toggleHighlight)="onToggle($event)"
@@ -21,8 +21,12 @@
             {{ course.longDescription }}
         </div>
 
-    </course-card>
+      </course-card>
 
-</div>
+  </div>
+
+</ng-template>
+
+
 
 
